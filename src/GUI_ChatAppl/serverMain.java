@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  *
  * @author SreeraG
  */
-public class head extends Application{      //FULL-FLEDGED SERVER GUI
+public class serverMain extends Application{      //FULL-FLEDGED SERVER GUI
     
     
     public static void main(String [] x){
@@ -25,7 +25,7 @@ public class head extends Application{      //FULL-FLEDGED SERVER GUI
     @Override
     public void start(Stage primaryStage) throws Exception {
         
-        Parent servermain = FXMLLoader.load(head.class.getResource("Server_UI.fxml"));
+        Parent servermain = FXMLLoader.load(serverMain.class.getResource("Server_UI.fxml"));
         
         Scene scene = new Scene(servermain);
         

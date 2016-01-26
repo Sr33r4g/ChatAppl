@@ -26,10 +26,13 @@ import java.util.logging.Logger;
  */
 public class Client {
     
-    Socket clientsoc;String toSend;
+    public int port;
+    Socket clientsoc;
+    String toSend;
     String local = "localhost";
     static BufferedReader b1,b2;
-    InetAddress inet;BufferedWriter bw;
+    InetAddress inet;
+    BufferedWriter bw;
     
     public void initialize() throws IOException{
         inet = InetAddress.getByName(local);

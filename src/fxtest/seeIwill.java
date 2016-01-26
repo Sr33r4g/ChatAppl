@@ -17,7 +17,6 @@ import javafx.scene.control.Button;
 
 public class seeIwill
     implements Initializable {
-
     @FXML //  fx:id="myButton"
     private Button mybttn; // Value injected by FXMLLoader
 

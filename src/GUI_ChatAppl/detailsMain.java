@@ -6,13 +6,12 @@
 package GUI_ChatAppl;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -20,17 +19,22 @@ import javafx.stage.Stage;
  *
  * @author SreeraG
  */
-public class clienthead extends Application {
+public class detailsMain extends Application {
     
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("Details.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(detailsMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        Parent p2 = FXMLLoader.load(clienthead.class.getResource("Client_UI.fxml"));
         
         
-        Scene scene = new Scene(p2);
+        Scene scene = new Scene(root);
         
-        primaryStage.setTitle("~----CLIENT----~");
+        primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
