@@ -1,0 +1,14 @@
+
+
+
+
+
+
+#bttn:hover{
+    
+    -fx-background : blue;
+    -fx-background-color: blue;
+    
+    -fx-width : 50px;
+    -fx-height : 50px;
+}

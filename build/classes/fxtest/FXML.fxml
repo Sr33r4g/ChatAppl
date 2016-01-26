@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="640.0" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxtest.seeIwill">
+   <children>
+      <TextArea layoutX="14.0" layoutY="34.0" prefHeight="371.0" prefWidth="618.0" />
+      <Label layoutX="398.0" layoutY="14.0" prefHeight="17.0" prefWidth="64.0" text="Status :" />
+      <Label layoutX="480.0" layoutY="14.0" prefHeight="17.0" prefWidth="98.0" text="Conn status" />
+      <Button id="bttn" fx:id="mybttn" layoutX="545.0" layoutY="411.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" stylesheets="@StyleSheet.css" text="Send">
+         <opaqueInsets>
+            <Insets bottom="0.7" left="10.0" right="0.7" top="50.0" />
+         </opaqueInsets></Button>
+      <TextField layoutX="14.0" layoutY="411.0" prefHeight="25.0" prefWidth="525.0" />
+   </children>
+</AnchorPane>
