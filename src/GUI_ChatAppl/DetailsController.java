@@ -5,14 +5,23 @@
  */
 package GUI_ChatAppl;
 
+import chatappl.Client;
+import chatappl.Server;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -59,13 +68,34 @@ public class DetailsController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 String serveraddr = s1.getText() + "."+ s2.getText() +"."+ s3.getText() +"."+ s4.getText();
-                System.out.println("Server addr : " + serveraddr);
+//                System.out.println("Server addr : " + serveraddr);
                 
                 int port = Integer.parseInt(portno.getText());
-                System.out.println("Port: " + port);
+//                System.out.println("Port: " + port);
                 
-                
+                Client.local = serveraddr;
+                Client.port = Integer.parseInt(portno.getText());
+//                detailsMain.primaryStage.setScene(clientMain.launch(x));
+                Stage primaryStage = new Stage();
+                Parent p2 = null;
+                try {
+                    p2 = FXMLLoader.load(clientMain.class.getResource("Client_UI.fxml"));
+                } catch (IOException ex) {
+                    Logger.getLogger(DetailsController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        
+        
+        Scene scene = new Scene(p2);
+        
+        primaryStage.setTitle("~----CLIENT----~");
+        primaryStage.setScene(scene);
+        primaryStage.show();
               //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
+            
+            
+//                detailsMain.primaryStage.close();
+            
             }
         
     });

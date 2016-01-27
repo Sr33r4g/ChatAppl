@@ -52,7 +52,7 @@ public class ClientUI_ControllerClass implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            System.out.println("in here...");
+            //System.out.println("in here...");
             c.initialize();
             startThread();
             

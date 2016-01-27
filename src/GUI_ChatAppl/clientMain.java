@@ -18,13 +18,15 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author SreeraG
+ * @author SreeraG          //DOESNT SEEM TO BE OF USE AS OF YET.....
  */
+
 public class clientMain extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
         
+        /*
         Parent p2 = FXMLLoader.load(clientMain.class.getResource("Client_UI.fxml"));
         
         
@@ -33,11 +35,13 @@ public class clientMain extends Application {
         primaryStage.setTitle("~----CLIENT----~");
         primaryStage.setScene(scene);
         primaryStage.show();
+        
+        */
     }
 
     /**
      * @param args the command line arguments
-     */
+    */ 
     public static void main(String[] args) {
         launch(args);
     }

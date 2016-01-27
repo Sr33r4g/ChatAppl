@@ -20,7 +20,7 @@ import javafx.stage.Stage;
  * @author SreeraG
  */
 public class detailsMain extends Application {
-    
+    public static Stage primaryStage;
     @Override
     public void start(Stage primaryStage) {
         Parent root = null;

@@ -26,17 +26,19 @@ import java.util.logging.Logger;
  */
 public class Client {
     
-    public int port;
+    public static int port;
     Socket clientsoc;
     String toSend;
-    String local = "localhost";
+    public static String local;// = "localhost";
     static BufferedReader b1,b2;
     InetAddress inet;
     BufferedWriter bw;
     
     public void initialize() throws IOException{
+        System.out.println("Server addr : " + local);
+        System.out.println("Port : " + port);
         inet = InetAddress.getByName(local);
-        clientsoc = new Socket(inet,25000);
+        clientsoc = new Socket(inet,port);
         b1 = new BufferedReader(new InputStreamReader(System.in));
         b2 = new BufferedReader(new InputStreamReader(clientsoc.getInputStream()));
         bw = new BufferedWriter(new OutputStreamWriter(clientsoc.getOutputStream()));
