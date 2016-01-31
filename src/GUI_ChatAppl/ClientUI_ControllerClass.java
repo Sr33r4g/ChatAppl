@@ -28,9 +28,7 @@ public class ClientUI_ControllerClass implements Initializable{
     public void startThread(){
     Thread t = new Thread(){
             public void run(){
-                
                 while(true){
-                    System.out.println("running before fill");
                     fill(c.getFromServer());
                 }
             }};     

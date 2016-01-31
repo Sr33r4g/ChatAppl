@@ -6,13 +6,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_ChatAppl.ServerUI_ControllerClass">
+<AnchorPane id="AnchorPane" prefHeight="422.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI_ChatAppl.ServerUI_ControllerClass">
    <children>
       <TextArea fx:id="serverDisplay" editable="false" layoutX="14.0" layoutY="39.0" prefHeight="326.0" prefWidth="600.0" />
-      <TextField fx:id="serverMsg" layoutX="14.0" layoutY="379.0" prefHeight="25.0" prefWidth="504.0" />
+      <TextField fx:id="serverMsg" layoutX="14.0" layoutY="379.0" prefHeight="25.0" prefWidth="424.0" />
       <Button fx:id="serverButton" layoutX="528.0" layoutY="379.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Send" />
       <Label layoutX="476.0" layoutY="14.0" text="Status" />
       <Label alignment="CENTER" layoutX="520.0" layoutY="14.0" prefHeight="17.0" prefWidth="92.0" text="stopped" textFill="#da0e0e" />
-      <Button fx:id="serverSendFileBttn" layoutX="528.0" layoutY="424.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="Send" />
+      <Button fx:id="serverSendFileBttn" layoutX="433.0" layoutY="379.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="86.0" text="FileToSend" />
+      <Button fx:id="connectedClients" layoutX="386.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="Button" />
    </children>
 </AnchorPane>

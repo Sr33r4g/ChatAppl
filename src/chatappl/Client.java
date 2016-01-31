@@ -63,9 +63,13 @@ public class Client {
     public String getFromServer(){
         String msg = null;
             try{
-                System.out.println("-----Listerning to server-----");
+           //     System.out.println("-----Listerning to server-----");
             while(true)   {
                 msg = b2.readLine();
+                if(msg.equals(".1"))
+                {
+                    getFileContent();
+                }
                 System.out.println(clientsoc.getInetAddress().getHostName()+"@" +(new Date().getTime())+" : " + msg);
                 //return b2.readLine();
                 break;
@@ -75,7 +79,30 @@ public class Client {
     }
     
     
-/*  public void sendData1()throws IOException{//STRICKT TEST CODE
+    public void getFileContent(){
+        
+        try {
+            
+            String s = b2.readLine();
+            System.out.println("I guess the file name is " + s);
+            ClientFile cf = new ClientFile(port,s);
+//             cf.getFileName(b2.readLine());
+           // cf.connectToServer();
+            System.out.println("File receiving started...");
+            cf.getFile();
+            System.out.println("Done receiving....");
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    
+    
+    
+/*  public void sendData1()throws IOException{//STRICT TEST CODE
      //   while(true){
         toSend = b1.readLine();  //FOR DEBUGGING
         System.out.println("Sending :" + toSend);
