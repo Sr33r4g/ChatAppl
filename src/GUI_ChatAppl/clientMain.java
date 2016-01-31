@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI_ChatAppl;   //A USELESS FILE.... it is called from DetailsController.java
+package GUI_ChatAppl;
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -21,13 +21,13 @@ import javafx.stage.Stage;
  * @author SreeraG          //DOESNT SEEM TO BE OF USE AS OF YET.....
  */
 
-public class commonCallerClass extends Application {
+public class clientMain extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
         
         /*
-        Parent p2 = FXMLLoader.load(commonCallerClass.class.getResource("Client_UI.fxml"));
+        Parent p2 = FXMLLoader.load(clientMain.class.getResource("Client_UI.fxml"));
         
         
         Scene scene = new Scene(p2);

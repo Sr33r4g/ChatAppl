@@ -22,22 +22,13 @@ import java.net.Socket;
 public class ClientFile {
     Socket conn;
     String local = "localhost";
-    int cPort;
-    String fname;
-    
-    public ClientFile(int p,String s){
-        cPort = p++;
-        fname = s;
-    }
-    
-    
     void connectToServer() throws IOException{
-        
+        conn = new Socket(local,25000);
+        System.out.println("Connected");
     }
     
     void getFile() throws IOException{
-        conn = new Socket(local,25001);
-        File file = new File("C:\\Users\\SreeraG\\Documents\\FTPs\\ChatAppl\\src\\chatappl\\" + fname);
+        File file = new File("C:\\Users\\SreeraG\\Documents\\FTPs\\ChatAppl\\src\\chatappl\\");
         
         FileOutputStream fin = new FileOutputStream(file);
         
@@ -51,12 +42,12 @@ public class ClientFile {
     }
     
     
-   /* public static void main(String [] x) throws IOException{
+    public static void main(String [] x) throws IOException{
         ClientFile cf = new ClientFile();
         
         
         cf.connectToServer();
         cf.getFile();
-    }*/
+    }
     
 }

@@ -29,40 +29,38 @@ public class ServerFile {
     
     ServerSocket serv;
     Socket isconn;
-    public void startTransfer(int s,File f) throws IOException{
-        int temp = s + 1;
-        serv = new ServerSocket(25001);
+    void start() throws IOException{
+        serv = new ServerSocket(25000);
         isconn = serv.accept();
         DataOutputStream dos = new DataOutputStream(isconn.getOutputStream());
         System.out.println("Got one connection... :)");
     
-      //  File f = new File("C:\\Users\\SreeraG\\Documents\\FTPs\\ChatAppl\\src\\chatappl\\ProjectTracking.txt");
+        File f = new File("C:\\Users\\SreeraG\\Documents\\FTPs\\ChatAppl\\src\\chatappl\\");
         FileInputStream file = new FileInputStream(f);
+        System.out.println("here in here");
         byte [] bfile = new byte[(int) f.length()];
         
         file.read(bfile);
+        
+        
         
         dos.write(bfile);
         dos.flush();
         dos.close();
         
-        System.out.println("done sending...");
-        serv.close();
-        isconn.close();
+       // isconn.close();
     }
     
     
-    
-    /*
     public static void main(String [] x){
         ServerFile s= new ServerFile();
         
         try{
-            s.startTransfer();
+            s.start();
             
         }catch(FileNotFoundException f){}
         catch(IOException e){}
         
-    }*/
+    }
     
 }
