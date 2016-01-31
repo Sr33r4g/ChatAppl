@@ -9,7 +9,6 @@ import GUI_ChatAppl.ClientUI_ControllerClass;
 import GUI_ChatAppl.ServerUI_ControllerClass;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -18,7 +17,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.control.TextField;
 
 /**
  *
@@ -27,26 +25,20 @@ import javafx.scene.control.TextField;
 public class Server {
     static BufferedReader b,br;
     OutputStreamWriter osw;
-    public BufferedWriter bw;String reply;
+    BufferedWriter bw;String reply;
     ServerSocket server;
-    public Socket clientChecker;
-    public int servPort = 25000;
-//    public DataOutputStream dos;
-    
-    
-   
+    Socket clientChecker;
     
     public void start(){   //listens to client connections...        
         
         try{
-            server = new ServerSocket(servPort);
+            server = new ServerSocket(25000);
             System.out.println("Started server....");
             clientChecker = server.accept();
             b = new BufferedReader(new InputStreamReader(clientChecker.getInputStream()));
             bw = new BufferedWriter(new OutputStreamWriter(clientChecker.getOutputStream()));
             br = new BufferedReader(new InputStreamReader(System.in));
-//            dos = new DataOutputStream(clientChecker.getOutputStream());
-            System.out.println("clientChecker inside Server.java : " + clientChecker);
+            
         }catch(IOException e){  
         }
         
@@ -55,7 +47,7 @@ public class Server {
     public String listenToClient(){
         String msg = null;
         try{
-         //   System.out.println("-----Listening if the client is saying something or no-----");
+            System.out.println("-----Listening if the client is saying something or no-----");
         while(true) {
              msg = b.readLine();
             break;
@@ -66,18 +58,11 @@ public class Server {
     
     public void sentToClient(String s){
         try{
-//            
+//           
         bw.write(s + "\n");
         bw.flush();
         }catch(IOException e){}
     }
-    
-    
-    
-    
-    
-    
-    
     
   /*  public void sentToClient1(){ //STRICT TEST CODE 
         try{

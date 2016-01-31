@@ -21,10 +21,7 @@ public class serverMain extends Application{      //FULL-FLEDGED SERVER GUI
     public static void main(String [] x){
         launch(x);
     }
-    
-    
-    public static Stage primaryStage;
-    
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         
